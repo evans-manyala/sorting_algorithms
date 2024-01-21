@@ -8,6 +8,7 @@ What it is:
 
 Bubble Sort is a simple sorting algorithm that repeatedly compares adjacent elements in a list and swaps them if they are in the wrong order.
 It's named for the way larger elements "bubble" up to the end of the list, like air bubbles rising to the surface of water.
+
 How it works:
 
 Initialization:
