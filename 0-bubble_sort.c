@@ -8,12 +8,11 @@
 void bubble_sort(int *array, size_t size)
 {
 	size_t x, y, z = 0;
-	int temp;
-	bool swapped;
+	int temp, swapped;
 
 	for (x = 0; x < size - 1; x++)
 	{
-		swapped = false;
+		swapped = 0;
 
 		for (y = 0; y < size - x - 1; y++)
 		{
@@ -22,7 +21,7 @@ void bubble_sort(int *array, size_t size)
 				temp = array[y];
 				array[y] = array[y + 1];
 				array[y + 1] = temp;
-				swapped = true;
+				swapped = 1;
 				printf("Array after swap: [");
 				for (z = 0; z < size; z++)
 					printf("%d, ", array[z]);
