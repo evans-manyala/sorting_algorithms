@@ -7,7 +7,7 @@
 
 void bubble_sort(int *array, size_t size)
 {
-	size_t x, y, z;
+	size_t x, y;
 	int temp, swapped;
 
 	if (array == NULL || size < 2) /* Check for NULL array or size less than 2 */
@@ -28,14 +28,11 @@ void bubble_sort(int *array, size_t size)
 				array[y + 1] = temp;
 				swapped = 1;
 				/* Print the array after the swap */
-				printf("Array after swap: [");
-				for (z = 0; z < size; z++)
-					printf("%d, ", array[z]);
-				printf("\b\b]\n");
+				print_array(array, size);
 			}
 		}
 		/* If no swaps occurred in a pass, the array is sorted, so break */
-		if (!swapped)
-			break;
+		if (swapped == 0)
+			return;
 	}
 }
