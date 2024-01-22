@@ -7,11 +7,11 @@
  */
 void bubble_sort(int *array, size_t size)
 {
-	size_t x, y, z;
-	int temp, swapped;
-
 	if (array == NULL || size < 2)
 		return;
+
+	size_t x, y;
+	int temp, swapped;
 
 	for (x = 0; x < size - 1; x++)
 	{
@@ -34,8 +34,8 @@ void bubble_sort(int *array, size_t size)
 			break;
 
 		// Print array after a pass
-		printf("Array after pass %u: [", (unsigned int)(x + 1));
-		for (z = 0; z < size; z++)
+		printf("Array after pass %zu: [", x + 1);
+		for (size_t z = 0; z < size; z++)
 			printf("%d%s", array[z], z < size - 1 ? ", " : "");
 		printf("]\n");
 	}
