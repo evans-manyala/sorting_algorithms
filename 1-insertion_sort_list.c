@@ -1,26 +1,22 @@
 #include "sort.h"
+
 /**
- * insertion_sort_list - Function performs insertions sort
- * on a list.
- * @list: List to be sorted using insertion sort.
-*/
-
-void insertion_sort_list(listint_t **list)
+ * swapping_nodes - Swap two nodes of a doubly-linked list.
+ * @head: A pointer to the head of the doubly-linked list.
+ * @ptr1: A pointer to the pointer of the first node to be swapped.
+ * @ptr2: The second node to swap.
+ */
+void swapping_nodes(listint_t **head, listint_t **ptr1, listint_t *ptr2)
 {
-	listint_t *current, *prev, *next;
-
-	if (!*list || !(*list)->next)
-		return; /*Empty list or single element*/
-	for (current = *list; current; current = current->next)
-	{
-		prev = NULL;
-		next = current->next;
-
-		/*Find the insertion point for current node*/
-		for (prev = current->prev; prev; prev = prev->prev)
-		{
-			if (prev->n > current->n)
-				break;
-		}
-	}
+	(*ptr1)->next = ptr2->next;
+	if (ptr2->next != NULL)
+		ptr2->next->prev = *ptr1;
+	ptr2->prev = (*ptr1)->prev;
+	ptr2->next = *ptr1;
+	if ((*ptr1)->prev != NULL)
+		(*ptr1)->prev->next = ptr2;
+	else
+		*head = ptr2;
+	(*ptr1)->prev = ptr2;
+	*ptr1 = ptr2->prev;
 }
