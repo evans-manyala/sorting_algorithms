@@ -20,3 +20,29 @@ void swapped(int *num1, int *num2)
  * @array:  array to be sorted
  * @size: array size
  */
+void selection_sort(int *array, size_t size)
+{
+	size_t x, y, min_index;
+
+	if (array == NULL || size < 2)
+		return;
+
+	for (x = 0; x < size - 1; x++)
+	{
+		min_index = x;
+
+		for (y = x + 1; y < size; y++)
+		{
+			if (array[y] < array[min_index])
+				min_index = y;
+		}
+
+		if (min_index != x)
+		{
+			/*Swap elements*/
+			swapped(&array[x], &array[min_index]);
+			/*Print array after swap*/
+			print_array(array, size);
+		}
+	}
+}
