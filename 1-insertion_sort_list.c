@@ -20,3 +20,13 @@ void swapping_nodes(listint_t **head, listint_t **ptr1, listint_t *ptr2)
 	(*ptr1)->prev = ptr2;
 	*ptr1 = ptr2->prev;
 }
+
+/**
+ * insertion_sort_list - sorts a doubly linked list of integers
+ * in ascending order
+ * @list: a pointer to the head of the doubly linked list
+ */
+void insertion_sort_list(listint_t **list)
+{
+	listint_t *iter, *insert, *tmp;
+}
