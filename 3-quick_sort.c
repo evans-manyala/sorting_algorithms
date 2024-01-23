@@ -60,3 +60,16 @@ void lomuto_quick_sort(int *array, ssize_t low, ssize_t high, size_t size)
 		lomuto_quick_sort(array, pivot_index + 1, high, size);
 	}
 }
+/**
+ * quick_sort - sorts an array of integers in ascending order
+ * using Quick Sort Algorithm (Lomuto partition scheme)
+ * @array: array to be sorted
+ * @size: array size
+ */
+void quick_sort(int *array, size_t size)
+{
+	if (array == NULL || size < 2)
+		return;
+
+	lomuto_quick_sort(array, 0, size - 1, size);
+}
