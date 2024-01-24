@@ -6,11 +6,11 @@
  */
 void swapped(int *num1, int *num2)
 {
-        int temp;
+	int temp;
 
-        temp = *num1;
-        *num1 = *num2;
-        *num2 = temp;
+	temp = *num1;
+	*num1 = *num2;
+	*num2 = temp;
 }
 
 /**
