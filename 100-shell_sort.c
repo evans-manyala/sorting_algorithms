@@ -21,29 +21,29 @@ void swapped(int *num1, int *num2)
  */
 void shell_sort(int *array, size_t size)
 {
-        size_t x, y, gap;
+	size_t x, y, gap;
 
-        if (array == NULL || size < 2)
-                return;
-        gap = 1;
+	if (array == NULL || size < 2)
+		return;
+	gap = 1;
 
-        while (gap < (size / 3))
-                gap = (gap * 3) + 1;
+	while (gap < (size / 3))
+		gap = (gap * 3) + 1;
 
-        while (gap >= 1)
-        {
-                x = gap;
-                while (x < size)
-                {
-                        y = x;
-                        while (y >= gap && array[y - gap] > array[y])
-                        {
-                                swapped(array + y, array + (y - gap));
-                                y -= gap;
-                        }
-                        x++;
-                }
-                print_array(array, size);
-                gap /= 3;
-        }
+	while (gap >= 1)
+	{
+		x = gap;
+		while (x < size)
+		{
+			y = x;
+			while (y >= gap && array[y - gap] > array[y])
+			{
+				swapped(array + y, array + (y - gap));
+				y -= gap;
+			}
+			x++;
+		}
+		print_array(array, size);
+		gap /= 3;
+	}
 }
